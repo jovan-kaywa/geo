@@ -12,7 +12,7 @@ Prepare unemployment data for Ca from stretch
 
 6. display unemployment data on 
 
-*** Done
+Done
 1. state shape file
 https://www.census.gov/geo/maps-data/data/cbf/cbf_counties.html
 
