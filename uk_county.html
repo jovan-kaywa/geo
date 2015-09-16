@@ -15,10 +15,7 @@ var width = 960,
 
 var projection = d3.geo.albers()
     .center([0, 55.4])
-    .rotate([4.4, 0])
-    .parallels([50, 60])
-    .scale(1200 * 5)
-    .translate([width / 2, height / 2]);
+;
 
 var path = d3.geo.path()
     .projection(projection);
@@ -27,9 +24,11 @@ var svg = d3.select("body").append("svg")
     .attr("width", width)
     .attr("height", height);
 
-d3.json("uk_county.json", function(error, uk) {
+d3.json("Data/district_borough_unitary_region.json", function(error, uk) {
+  if (error) return console.error(error);
+  console.log(uk);
   svg.append("path")
-      .datum(topojson.feature(uk, uk.objects.county_region))
+      .datum(topojson.feature(uk, uk.objects.district_borough_unitary_region))
       .attr("d", path);
 });
 
